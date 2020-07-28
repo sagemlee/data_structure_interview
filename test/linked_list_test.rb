@@ -32,4 +32,19 @@ class LinkedListTest < Minitest::Test
         node = list.append("West")
         assert_equal "The West Family", list.to_string
     end 
+
+    def test_it_can_append_twice
+        list = LinkedList.new 
+        node1 = list.append("Rhodes")
+        node2 = list.append("Hardy")
+        assert_equal node2, list.head.next_node
+    end   
+    
+    def test_it_can_count_many_nodes
+        list = LinkedList.new 
+        node1 = list.append("Rhodes")
+        node2 = list.append("Hardy")
+        assert_equal 2, list.count
+    end 
+
 end 

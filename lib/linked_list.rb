@@ -7,7 +7,11 @@ class LinkedList
     end 
 
     def append(head)
-       @head = Node.new(head)
+        if @head == nil
+            @head = Node.new(head)
+        else 
+            @head.add_next_node(head)
+        end 
     end 
 
     def count
